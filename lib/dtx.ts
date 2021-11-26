@@ -1,3 +1,5 @@
+import { readFileSync } from 'fs';
+
 import DataArray from './arraytypes';
 import { DataAtom, getSymbol } from './atomictypes';
 import { DataType } from './types';
@@ -8,6 +10,19 @@ enum parseState {
     inLiteral,
     inSymbol,
     inComment
+}
+
+function parseDTAFile(file: string): DataArray {
+    const data = readFileSync(file);
+    return parseDTA(data);
+}
+
+function parseDTA(input: string | Buffer): DataArray {
+    if (typeof input === 'string') {
+        return parse(input);
+    } else {
+        return parse(input.toString());
+    }
 }
 
 function parse(input: string): DataArray {
@@ -189,4 +204,4 @@ function addLiteral(current: DataArray, literal: string) {
     }
 }
 
-export { parse };
+export { parseDTA, parseDTAFile };
