@@ -1,3 +1,2 @@
-const test = 'hello';
-
-export { test };
+import { parseDTA, parseDTAFile } from './dtx';
+export { parseDTA, parseDTAFile };

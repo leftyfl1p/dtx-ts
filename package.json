@@ -1,7 +1,7 @@
 {
-  "name": "ts-lib-template",
-  "version": "0.0.1",
-  "description": "basic node.js typescript library template",
+  "name": "dtx-ts",
+  "version": "1.0.0",
+  "description": "Library to parse and read(only) DTA files",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "leftyfl1p",
